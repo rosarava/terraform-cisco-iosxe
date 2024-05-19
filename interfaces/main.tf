@@ -1,10 +1,8 @@
 terraform {
-  required_version = ">= 1.8.0"
-
   required_providers {
     iosxe = {
-      source  = "CiscoDevNet/iosxe"
-      version = ">= 0.5.1"
+      source = "CiscoDevNet/iosxe"
+      version = "0.5.5"
     }
   }
 }
@@ -12,10 +10,10 @@ terraform {
 provider "iosxe" {
   username = "admin"
   password = "C1sco12345"
-  url      = "devnetsandboxiosxe.cisco.com"
+  url      = "https://devnetsandboxiosxe.cisco.com"
 }
 
-data "iosxe_interface_ethernet" "GigabitEthernet2" {
+data "iosxe_interface_ethernet" "example" {
   type = "GigabitEthernet"
-  name = "2"
+  name = "1"
 }
