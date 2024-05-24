@@ -13,7 +13,11 @@ provider "iosxe" {
   url      = "https://devnetsandboxiosxe.cisco.com"
 }
 
-data "iosxe_interface_ethernet" "example" {
+data "iosxe_interface_ethernet" "GigabitEthernet1" {
   type = "GigabitEthernet"
   name = "1"
+}
+
+output "GigabitEthernet1_ip" {
+  value = data.iosxe_interface_ethernet.GigabitEthernet1.ipv4_address
 }
